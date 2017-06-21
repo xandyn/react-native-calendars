@@ -11,28 +11,7 @@ export default function getStyle(theme={}) {
       backgroundColor: 'transparent',
       ...appStyle.calendarContainerStyle
     },
-    week: {
-      marginVertical: 7,
-      flexDirection: 'row',
-      justifyContent: 'space-around',
-      ...appStyle.weekContainerStyle
-    },
-    weekDaysContainer: {
-      marginVertical: 7,
-      flexDirection: 'row',
-      flexWrap: 'nowrap',
-      justifyContent: 'space-around',
-    },
-    dayHeader: {
-      marginTop: 2,
-      marginBottom: 7,
-      width: 32,
-      textAlign: 'center',
-      fontSize: 13,
-      color: 'white',
-      opacity: 0.5,
-      ...appStyle.weekDaysStyle
-    },
+
   });
 }
 

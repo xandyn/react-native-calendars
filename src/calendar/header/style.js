@@ -31,9 +31,16 @@ export default function(theme={}) {
       })
     },
     week: {
-      marginTop: 7,
+      marginVertical: 7,
       flexDirection: 'row',
-      justifyContent: 'space-around'
+      justifyContent: 'space-around',
+      ...appStyle.weekContainerStyle
+    },
+    weekDaysContainer: {
+      marginVertical: 7,
+      flexDirection: 'row',
+      flexWrap: 'nowrap',
+      justifyContent: 'space-around',
     },
     dayHeader: {
       marginTop: 2,
@@ -41,7 +48,9 @@ export default function(theme={}) {
       width: 32,
       textAlign: 'center',
       fontSize: 13,
-      color: appStyle.textSectionTitleColor
-    }
+      color: 'white',
+      opacity: 0.5,
+      ...appStyle.weekDaysStyle
+    },
   });
 }

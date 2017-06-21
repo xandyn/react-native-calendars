@@ -211,18 +211,17 @@ class Calendar extends Component {
     }
     return (
       <View style={[this.style.container, this.props.style]}>
-        {!this.props.hideHeader &&
-          <CalendarHeader
-            theme={this.props.theme}
-            hideArrows={this.props.hideArrows}
-            month={this.state.currentMonth}
-            addMonth={this.addMonth}
-            showIndicator={indicator}
-            firstDay={this.props.firstDay}
-            renderArrow={this.props.renderArrow}
-            monthFormat={this.props.monthFormat}
-          />
-        }
+        <CalendarHeader
+          theme={this.props.theme}
+          hideArrows={this.props.hideArrows}
+          hideHeader={this.props.hideHeader}
+          month={this.state.currentMonth}
+          addMonth={this.addMonth}
+          showIndicator={indicator}
+          firstDay={this.props.firstDay}
+          renderArrow={this.props.renderArrow}
+          monthFormat={this.props.monthFormat}
+        />
         {weeks}
       </View>);
   }
