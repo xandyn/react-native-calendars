@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import {StyleSheet, Platform} from 'react-native';
 import * as defaultStyle from '../style';
 
 export default function getStyle(theme={}) {
@@ -30,7 +30,10 @@ export default function getStyle(theme={}) {
       textAlign: 'center',
       fontSize: 13,
       color: 'white',
-      opacity: 0.5,
+      ...Platform.select({
+        ios: { opacity: 0.5 },
+        android: { opacity: 0.35 },
+      }),
       ...appStyle.weekDaysStyle
     },
   });

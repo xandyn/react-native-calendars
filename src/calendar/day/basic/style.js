@@ -32,7 +32,10 @@ export default function styleConstructor(theme={}) {
       ...appStyle.selectedTextStyle,
     },
     disabledText: {
-      opacity: 0.5,
+      ...Platform.select({
+        ios: { opacity: 0.5 },
+        android: { opacity: 0.35 },
+      }),
       ...appStyle.disabledTextStyle,
     },
     otherMonthText: {
