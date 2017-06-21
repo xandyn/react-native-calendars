@@ -25,3 +25,15 @@ export const monthTextColor = textDefaultColor;
 export const agendaDayTextColor = '#7a92a5';
 export const agendaDayNumColor = '#7a92a5';
 export const agendaTodayColor = textLinkColor;
+
+
+export const calendarContainerStyle = {};
+export const weekContainerStyle = {};
+export const weekDaysStyle = {};
+export const dayContainerStyle = {};
+export const selectedDayStyle = {};
+export const dayTextStyle = {};
+export const selectedTextStyle = {};
+export const disabledTextStyle = {};
+export const todayTextStyle = {};
+export const dotStyle = {};

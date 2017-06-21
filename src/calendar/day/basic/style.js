@@ -5,43 +5,56 @@ export default function styleConstructor(theme={}) {
   const appStyle = {...defaultStyle, ...theme};
   return StyleSheet.create({
     base: {
-      width: 32,
-      height: 32,
-      alignItems: 'center'
+      width: 50,
+      height: 50,
+      alignItems: 'center',
+      justifyContent: 'center',
+      ...appStyle.dayContainerStyle,
     },
     text: {
-      marginTop: 4,
-      fontSize: 16,
-      fontWeight: '300',
-      color: appStyle.dayTextColor,
-      backgroundColor: 'rgba(255, 255, 255, 0)'
+      fontSize: 15,
+      color: 'white',
+      backgroundColor: 'transparent',
+      ...appStyle.dayTextStyle,
     },
     alignedText: {
       marginTop: Platform.OS === 'android' ? 4 : 6
     },
     selected: {
-      backgroundColor: appStyle.selectedDayBackgroundColor,
-      borderRadius: 16
+      backgroundColor: 'rgba(255, 255, 255, 0.1)',
+      borderRadius: 50,
+      ...appStyle.selectedDayStyle,
     },
     todayText: {
-      color: appStyle.todayTextColor
+      ...appStyle.todayTextStyle,
     },
     selectedText: {
-      color: appStyle.selectedDayTextColor
+      ...appStyle.selectedTextStyle,
     },
     disabledText: {
-      color: appStyle.textDisabledColor
+      opacity: 0.5,
+      ...appStyle.disabledTextStyle,
+    },
+    otherMonthText: {
+      ...Platform.select({
+        ios: { opacity: 0.5 },
+        android: { opacity: 0.35 },
+      }),
     },
     dot: {
-      width: 4,
-      height: 4,
-      marginTop: 1,
-      borderRadius: 2,
-      opacity: 0
+      position: 'absolute',
+      opacity: 0,
+      width: 5,
+      height: 5,
+      bottom: 8,
+      backgroundColor: 'transparent',
+      borderRadius: 20,
+      borderWidth: 1,
+      borderColor: 'rgba(255, 255, 255, 0.5)',
     },
     visibleDot: {
       opacity: 1,
-      backgroundColor: appStyle.dotColor
+      ...appStyle.dotStyle,
     },
     selectedDot: {
       backgroundColor: appStyle.selectedDotColor
